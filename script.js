@@ -40,6 +40,13 @@ let cart = [];
 if (localStorage.getItem('cart')) {
     cart = JSON.parse(localStorage.getItem('cart'))
     drawCartProducts();
-    
+}
+
+function addProductToCart(id)
+{
+    let product = productsArray.find(function(p){
+        return p._id == id;
+    })
+    cart.push(product);
 }
 
