@@ -28,9 +28,18 @@ xhr.onload = function(){
        <p class="product-price"><b>price:</b>${p.price}</p>
        <p class="product-description"><b>description:</b>${p.description}</p>
        <button onclick="addProductToCart('${p._id}')">buy</button>
-       ` 
+       ` ;
+       productsGrid.append(pElem);
     });
 }
 
 xhr.send(data);
+
+let cartProd = document.getElementById('cart-products');
+let cart = [];
+if (localStorage.getItem('cart')) {
+    cart = JSON.parse(localStorage.getItem('cart'))
+    drawCartProducts();
+    
+}
 
