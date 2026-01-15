@@ -9,7 +9,7 @@ xhr.addEventListener("readystatechange", function () {
   }
 });
 
-xhr.open("GET", "https://webmiddle-d1a3.restdb.io/rest/items");
+xhr.open("GET", "https://webmiddles-fdcd.restdb.io/rest/items");
 xhr.setRequestHeader("content-type", "application/json");
 xhr.setRequestHeader("x-apikey", "<your CORS apikey here>");
 xhr.setRequestHeader("cache-control", "no-cache");
