@@ -48,5 +48,14 @@ function addProductToCart(id)
         return p._id == id;
     })
     cart.push(product);
-}
+    drawCartProducts();
+    localStorage.setItem("cart", JSON.stringify(cart));
+    document.getElementById('cart-button')
+        .classList.add('active');
+
+    setTimeout(function () {
+        document.getElementById('cart-button')
+            .classList.remove('active');
+    }, 500);
+  }
 
