@@ -77,4 +77,6 @@ function addProductToCart(id)
   <button onclick="buyAll()">Buy all</button>
   `;
 }
-
+function openCart(){
+  cartProd.classList.toggle('hide');
+}
