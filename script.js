@@ -16,6 +16,7 @@ xhr.setRequestHeader("content-type", "application/json");
 xhr.setRequestHeader("x-apikey", "6968e1d07ba9c9c3187848ad");
 xhr.setRequestHeader("cache-control", "no-cache");
 
+
 xhr.responseType = 'json';
 xhr.onload = function(){
     productsArray = xhr.response
@@ -60,4 +61,20 @@ function addProductToCart(id)
             .classList.remove('active');
     }, 500);
   }
+
+  function drawCartProducts(){
+  if(cart.length === 0) return cartProd.innerHTML = 'Cart is empty';
+  cartProd.innerHTML = null;
+  let sum = 0;
+  cart.forEach(function(p){
+    cartProd.innerHTML += `
+    <p><img src="${p.img_url}"> ${p.name}  | ${p.price}$</p>
+    <hr> `;
+    sum+= +p.price;
+  });
+  cartProd.innerHTML += `
+  <p>Tota: ${sum}$</p>
+  <button onclick="buyAll()">Buy all</button>
+  `;
+}
 
