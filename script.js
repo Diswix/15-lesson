@@ -1,3 +1,5 @@
+let productsArray = [];
+let productsGrid = document.getElementById('product-grid');
 var data = null;
 
 var xhr = new XMLHttpRequest();
@@ -11,7 +13,7 @@ xhr.addEventListener("readystatechange", function () {
 
 xhr.open("GET", "https://webmiddles-fdcd.restdb.io/rest/items");
 xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("x-apikey", "2ea2f183442bebcb4c76d8b626bc8707799b3");
+xhr.setRequestHeader("x-apikey", "6968e1d07ba9c9c3187848ad");
 xhr.setRequestHeader("cache-control", "no-cache");
 
 xhr.responseType = 'json';
