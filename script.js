@@ -5,11 +5,11 @@ var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = false;
 
-xhr.addEventListener("readystatechange", function () {
+/*xhr.addEventListener("readystatechange", function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
-});
+}); */
 
 xhr.open("GET", "https://webmiddles-fdcd.restdb.io/rest/items");
 xhr.setRequestHeader("content-type", "application/json");
@@ -26,7 +26,7 @@ xhr.onload = function(){
        pElem.classList.add('product');
        pElem.innerHTML = `
        <h2 class="product-name">${p.name}</h2>
-       <img src="${p.photo_url}" alt="${p.name}" class="product-photo">
+       <img src="${p.img_url}" alt="${p.name}" class="product-photo">
        <p class="product-price"><b>price:</b>${p.price}</p>
        <p class="product-description"><b>description:</b>${p.description}</p>
        <button onclick="addProductToCart('${p._id}')">buy</button>
