@@ -80,3 +80,15 @@ function addProductToCart(id)
 function openCart(){
   cartProd.classList.toggle('hide');
 }
+
+function buyAll() {
+    if (cart.length > 0) {
+        alert("Покупка оформлена!");
+        cart = [];
+        localStorage.setItem("cart", JSON.stringify(cart));
+        drawCartProducts();
+        openCart();
+    } else {
+        alert("Корзина порожня!");
+    }
+}
