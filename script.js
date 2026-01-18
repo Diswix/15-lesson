@@ -83,12 +83,12 @@ function openCart(){
 
 function buyAll() {
     if (cart.length > 0) {
-        alert("Покупка оформлена!");
+        alert("Order confirmed!");
         cart = [];
         localStorage.setItem("cart", JSON.stringify(cart));
         drawCartProducts();
         openCart();
     } else {
-        alert("Корзина порожня!");
+        alert("Cart is empty!");
     }
 }
